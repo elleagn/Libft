@@ -6,11 +6,11 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 09:57:38 by gozon             #+#    #+#             */
-/*   Updated: 2024/05/20 16:03:01 by gozon            ###   ########.fr       */
+/*   Updated: 2024/05/21 11:59:32 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {

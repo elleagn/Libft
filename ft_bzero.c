@@ -6,11 +6,11 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 13:24:34 by gozon             #+#    #+#             */
-/*   Updated: 2024/05/20 16:03:26 by gozon            ###   ########.fr       */
+/*   Updated: 2024/05/21 11:53:34 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

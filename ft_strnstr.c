@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 14:29:12 by gozon             #+#    #+#             */
-/*   Updated: 2024/05/21 15:03:07 by gozon            ###   ########.fr       */
+/*   Updated: 2024/05/24 09:26:06 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	k;
 
 	i = 0;
+	if (!little[0])
+	{
+		return ((char *) big);
+	}
 	while (big[i] && i < len)
 	{
 		k = 0;

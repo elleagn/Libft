@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 08:18:16 by gozon             #+#    #+#             */
-/*   Updated: 2024/05/23 09:16:21 by gozon            ###   ########.fr       */
+/*   Updated: 2024/05/24 10:42:06 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,24 +25,40 @@ int	ft_powten(long int nbr)
 	return (pow);
 }
 
-char	*ft_initres(size_t *i, long int *nbr, int powten)
+int	ft_digitnbr(long int nbr)
+{
+	int	digits;
+	int	pow;
+
+	digits = 2;
+	pow = 1;
+	if (nbr < 0)
+	{
+		nbr = nbr * -1;
+		digits = digits + 1;
+	}
+	while (nbr / pow > 9)
+	{
+		pow = pow * 10;
+		digits = digits + 1;
+	}
+	return (digits);
+}
+
+char	*ft_initres(size_t *i, long int *nbr)
 {
 	char	*res;
+	int		digits;
 
+	digits = ft_digitnbr(*nbr);
+	res = malloc((digits) * sizeof(char));
+	if (res == NULL)
+		return (NULL);
 	if (*nbr < 0)
 	{
-		res = malloc((powten + 2) * sizeof(char));
-		if (res == NULL)
-			return (NULL);
 		res[0] = '-';
 		*nbr = *nbr * -1;
 		*i = *i + 1;
-	}
-	else
-	{
-		res = malloc((powten + 1) * sizeof(char));
-		if (res == NULL)
-			return (NULL);
 	}
 	return (res);
 }
@@ -57,7 +73,7 @@ char	*ft_itoa(int n)
 	nbr = n;
 	powten = ft_powten(nbr);
 	i = 0;
-	res = ft_initres(&i, &nbr, powten);
+	res = ft_initres(&i, &nbr);
 	while (powten)
 	{
 		res[i] = (nbr / powten) + '0';

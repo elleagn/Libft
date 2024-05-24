@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 16:33:45 by gozon             #+#    #+#             */
-/*   Updated: 2024/05/21 11:58:51 by gozon            ###   ########.fr       */
+/*   Updated: 2024/05/23 15:12:38 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strchr(const char *s, int c)
 	i = 0;
 	while (i <= ft_strlen(s))
 	{
-		if (s[i] == c)
+		if (s[i] == (char) c)
 		{
 			return ((char *) &s[i]);
 		}

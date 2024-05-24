@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 13:26:55 by gozon             #+#    #+#             */
-/*   Updated: 2024/05/21 13:43:00 by gozon            ###   ########.fr       */
+/*   Updated: 2024/05/23 15:15:10 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		if (p[i] == c)
+		if (p[i] == (unsigned char) c)
 			return ((void *) &(p[i]));
 		i++;
 	}

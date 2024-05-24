@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 08:18:16 by gozon             #+#    #+#             */
-/*   Updated: 2024/05/24 10:42:06 by gozon            ###   ########.fr       */
+/*   Updated: 2024/05/24 14:31:57 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,8 @@ char	*ft_itoa(int n)
 	powten = ft_powten(nbr);
 	i = 0;
 	res = ft_initres(&i, &nbr);
+	if (res == NULL)
+		return (NULL);
 	while (powten)
 	{
 		res[i] = (nbr / powten) + '0';

@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 10:18:51 by gozon             #+#    #+#             */
-/*   Updated: 2024/05/21 11:58:42 by gozon            ###   ########.fr       */
+/*   Updated: 2024/05/24 11:36:17 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	size_t	i;
-	unsigned char *p;
+	size_t			i;
+	unsigned char	*p;
 
 	p = s;
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 09:25:54 by gozon             #+#    #+#             */
-/*   Updated: 2024/05/21 11:56:56 by gozon            ###   ########.fr       */
+/*   Updated: 2024/05/24 11:34:27 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_isalnum(int c)
 {
 	if (ft_isalpha(c) || ft_isdigit(c))
 	{
-		return(8);
+		return (8);
 	}
 	return (0);
 }

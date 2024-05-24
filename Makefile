@@ -6,11 +6,11 @@
 #    By: gozon <gozon@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/17 16:31:27 by elleagn           #+#    #+#              #
-#    Updated: 2024/05/23 14:31:15 by gozon            ###   ########.fr        #
+#    Updated: 2024/05/24 11:32:26 by gozon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-TARGET = libft.a
+NAME = libft.a
 
 SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c ft_strlcpy.c \
@@ -19,21 +19,16 @@ ft_memchr.c ft_memcmp.c ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c \
 ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c \
 ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
-OBJS = ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o \
-ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memmove.o ft_strlcpy.o \
-ft_strlcat.o ft_toupper.o ft_tolower.o ft_strchr.o ft_strrchr.o ft_strncmp.o \
-ft_memchr.o ft_memcmp.o ft_strnstr.o ft_atoi.o ft_calloc.o ft_strdup.o \
-ft_substr.o ft_strjoin.o ft_strtrim.o ft_split.o ft_itoa.o ft_strmapi.o \
-ft_striteri.o ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o
+OBJS = $(SRCS:.c=.o)
 
 CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-all: $(TARGET)
+all: $(NAME)
 
-$(TARGET): $(OBJS)
-	ar -rcs $(TARGET) $(OBJS)
+$(NAME): $(OBJS)
+	ar -rcs $(NAME) $(OBJS)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c -o $@ $<
@@ -41,8 +36,7 @@ $(TARGET): $(OBJS)
 clean:
 	rm -f $(OBJS)
 
-fclean :
-	make clean && rm -f $(TARGET)
+fclean : clean
+	rm -f $(NAME)
 
-re:
-	make fclean && make all
+re: fclean all

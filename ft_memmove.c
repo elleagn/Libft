@@ -6,15 +6,11 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 14:37:19 by gozon             #+#    #+#             */
-/*   Updated: 2024/05/27 08:41:35 by gozon            ###   ########.fr       */
+/*   Updated: 2024/05/27 11:57:11 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// Technically if src is NULL but dest is also NULL you could just return dest
-// but memmove crashes if src is NULL anyway. You still can modify it with the
-// behavior you want depending on the project
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {

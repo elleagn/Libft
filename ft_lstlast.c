@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 10:17:11 by gozon             #+#    #+#             */
-/*   Updated: 2024/05/27 10:24:23 by gozon            ###   ########.fr       */
+/*   Updated: 2024/05/27 11:26:30 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
+	if (lst == NULL)
+		return (lst);
 	while (lst->next)
 		lst = lst->next;
 	return (lst);

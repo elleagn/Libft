@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 10:52:53 by gozon             #+#    #+#             */
-/*   Updated: 2024/05/27 11:05:27 by gozon            ###   ########.fr       */
+/*   Updated: 2024/05/27 11:59:10 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,15 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*next;
 
-	while ((*lst)->next)
+	if (*lst)
 	{
-		next = (*lst)->next;
+		while ((*lst)->next)
+		{
+			next = (*lst)->next;
+			ft_lstdelone(*lst, del);
+			*lst = next;
+		}
 		ft_lstdelone(*lst, del);
-		lst = next;
+		(*lst) = NULL;
 	}
-	ft_lstdelone(*lst, del);
-	(*lst) = NULL;
 }

@@ -6,11 +6,12 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 12:30:41 by gozon             #+#    #+#             */
-/*   Updated: 2024/05/23 14:09:13 by gozon            ###   ########.fr       */
+/*   Updated: 2024/05/27 08:04:12 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "stdio.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {
@@ -24,7 +25,7 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	if (nbr <= 9)
 	{
-		ft_putchar_fd(n + '0', fd);
+		ft_putchar_fd(nbr + '0', fd);
 	}
 	else
 	{

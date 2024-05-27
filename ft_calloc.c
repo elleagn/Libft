@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 08:35:09 by gozon             #+#    #+#             */
-/*   Updated: 2024/05/24 09:32:27 by gozon            ###   ########.fr       */
+/*   Updated: 2024/05/27 08:30:03 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
 
-	if (nmemb * size > INT_MAX || (size && nmemb > INT_MAX)
-		|| (size > INT_MAX && nmemb))
+	if (!nmemb || !size)
+		return (malloc(0));
+	if (nmemb > SIZE_MAX / size)
 		return (NULL);
 	ptr = malloc(nmemb * size);
 	if (ptr == NULL)

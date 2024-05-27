@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 13:33:47 by gozon             #+#    #+#             */
-/*   Updated: 2024/05/22 14:51:38 by gozon            ###   ########.fr       */
+/*   Updated: 2024/05/27 08:39:38 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ char	**ft_split(char const *s, char c)
 		res[k] = ft_substr(s, i, ft_wordlen(&s[i], c));
 		if (res[k] == NULL)
 		{
-			free(res);
+			ft_freetab(res, ft_count_words(s, c) + 1);
 			return (NULL);
 		}
 		i += ft_wordlen(&s[i], c);

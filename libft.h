@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 11:39:10 by gozon             #+#    #+#             */
-/*   Updated: 2024/05/27 09:29:04 by gozon            ###   ########.fr       */
+/*   Updated: 2024/05/27 09:56:02 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,5 @@ typedef struct s_list
 
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
-
+int		ft_lstsize(t_list *lst);
 #endif

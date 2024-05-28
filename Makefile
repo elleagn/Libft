@@ -6,7 +6,7 @@
 #    By: gozon <gozon@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/17 16:31:27 by elleagn           #+#    #+#              #
-#    Updated: 2024/05/27 11:52:06 by gozon            ###   ########.fr        #
+#    Updated: 2024/05/28 11:12:30 by gozon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ CFLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar -rcs $(NAME) $(OBJS)
+	ar -rcs $(NAME) $?
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c -o $@ $<

@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 10:02:12 by gozon             #+#    #+#             */
-/*   Updated: 2024/05/22 10:21:02 by gozon            ###   ########.fr       */
+/*   Updated: 2024/07/31 11:37:34 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	end = ft_strlen(s1) - 1;
 	while (s1[start] && ft_strchr(set, s1[start]))
 		start++;
-	while (start - end >= 0 && ft_strchr(set, s1[end]))
+	while (start <= end && ft_strchr(set, s1[end]))
 		end --;
 	trimmed = ft_substr(s1, start, end - start + 1);
 	return (trimmed);

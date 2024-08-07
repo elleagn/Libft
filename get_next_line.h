@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/22 09:43:03 by gozon             #+#    #+#             */
-/*   Updated: 2024/07/10 08:47:59 by gozon            ###   ########.fr       */
+/*   Created: 2024/06/05 08:07:23 by gozon             #+#    #+#             */
+/*   Updated: 2024/06/07 11:30:36 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-char	*ft_strjoin(char const *s1, char const *s2)
-{
-	char	*res;
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
 
-	res = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
-	if (res == NULL)
-		return (NULL);
-	ft_strlcpy(res, s1, ft_strlen(s1) + 1);
-	ft_strlcat(res, s2, ft_strlen(s1) + ft_strlen(s2) + 1);
-	return (res);
-}
+# include <unistd.h>
+# include <stdlib.h>
+
+char	*get_next_line(int fd);
+char	*ft_strjoin(char **line, char *buf, int *eol, int read_size);
+void	ft_trimbuf(char *buf, int read_size);
+char	*ft_init_line(char *buf, int fd, int *read_size);
+
+#endif

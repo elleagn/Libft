@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/22 09:43:03 by gozon             #+#    #+#             */
-/*   Updated: 2024/07/10 08:47:59 by gozon            ###   ########.fr       */
+/*   Created: 2024/05/29 16:22:47 by elleagn           #+#    #+#             */
+/*   Updated: 2024/07/08 09:05:34 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-char	*ft_strjoin(char const *s1, char const *s2)
-{
-	char	*res;
+# include "libft.h"
+# include <stdarg.h>
 
-	res = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
-	if (res == NULL)
-		return (NULL);
-	ft_strlcpy(res, s1, ft_strlen(s1) + 1);
-	ft_strlcat(res, s2, ft_strlen(s1) + ft_strlen(s2) + 1);
-	return (res);
-}
+int	ft_printf(const char *s, ...);
+int	ft_printchar(int c);
+int	ft_printstring(char *s);
+int	ft_printnbr(int n, int size, char *base);
+int	ft_printptr(void *ptr);
+int	ft_printul(unsigned long int n, int size, char *base);
+
+#endif

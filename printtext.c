@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   printtext.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/22 09:43:03 by gozon             #+#    #+#             */
-/*   Updated: 2024/07/10 08:47:59 by gozon            ###   ########.fr       */
+/*   Created: 2024/05/31 06:37:55 by gozon             #+#    #+#             */
+/*   Updated: 2024/06/03 06:45:00 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+int	ft_printchar(int c)
 {
-	char	*res;
+	ft_putchar_fd(c, 1);
+	return (1);
+}
 
-	res = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
-	if (res == NULL)
-		return (NULL);
-	ft_strlcpy(res, s1, ft_strlen(s1) + 1);
-	ft_strlcat(res, s2, ft_strlen(s1) + ft_strlen(s2) + 1);
-	return (res);
+int	ft_printstring(char *s)
+{
+	int	i;
+
+	if (!s)
+		return (ft_printstring("(null)"));
+	i = 0;
+	while (s[i])
+	{
+		ft_putchar_fd(s[i], 1);
+		i++;
+	}
+	return (ft_strlen(s));
 }
